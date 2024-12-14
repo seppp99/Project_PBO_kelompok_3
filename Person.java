@@ -28,6 +28,5 @@ public abstract class Person {
         this.age = age;
     }
 
-    // Metode abstrak yang harus diimplementasikan oleh kelas turunan
-    public abstract void displayInfo();
+    
 }

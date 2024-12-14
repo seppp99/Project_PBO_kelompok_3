@@ -1,16 +1,13 @@
-// File: Person.java
+
 public abstract class Person {
-    // Atribut
     private String name;
     private int age;
 
-    // Konstruktor
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     } 
 
-    // Getter dan Setter untuk name
     public String getName() {
         return name;
     }
@@ -19,7 +16,6 @@ public abstract class Person {
         this.name = name;
     }
 
-    // Getter dan Setter untuk age
     public int getAge() {
         return age;
     }
@@ -28,5 +24,5 @@ public abstract class Person {
         this.age = age;
     }
 
-    
+
 }

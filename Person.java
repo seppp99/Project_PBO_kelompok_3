@@ -24,6 +24,5 @@ public abstract class Person {
         this.age = age;
     }
 
-    public void testCommit();
     
 }

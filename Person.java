@@ -8,7 +8,7 @@ public abstract class Person {
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
-    }
+    } 
 
     // Getter dan Setter untuk name
     public String getName() {
@@ -28,6 +28,4 @@ public abstract class Person {
         this.age = age;
     }
 
-    // Metode abstrak yang harus diimplementasikan oleh kelas turunan
-    public abstract void displayInfo();
 }

@@ -31,5 +31,5 @@ public abstract class Person {
     // Metode abstrak yang harus diimplementasikan oleh kelas turunan
     public abstract void displayInfo();
 
-    //Silahkan coba commit terlebih dahulu
+    //Silahkan coba commit terlebih dahulu yaa
 }

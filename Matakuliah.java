@@ -1,49 +1,47 @@
-abstract class Matakuliah{
-    private String nama;
-    private String kode;
-    private String dosen;
-    private int sks;
 
-    public Matakuliah(String nama, String kode, String dosen, int sks){
-        this.nama = nama;
-        this.kode = kode;
-        this.dosen = dosen;
-        this.sks = sks;
+import java.util.ArrayList;
+import java.util.List;
+
+
+abstract class Matakuliah{
+    private String namaMatkul;
+    private String kodeMatkul;
+    private Dosen dosen;
+    private List<Mahasiswa> daftarMahasiswa;
+    
+
+    public Matakuliah(String namaMatkul, String kodeMatkul){
+        this.namaMatkul = namaMatkul;
+        this.kodeMatkul = kodeMatkul;
+        this.daftarMahasiswa = new ArrayList<>();
     }
     
 // Getter dan Setter
   
     public String getNama() {
-        return nama;
+        return namaMatkul;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNama(String namaMatkul) {
+        this.namaMatkul = namaMatkul;
     }
 
     public String getKode() {
-        return kode;
+        return kodeMatkul;
     }
    
-    public void setKode(String kode) {
-        this.kode = kode;
+    public void setKode(String kodeMatkul) {
+        this.kodeMatkul = kodeMatkul;
     }
 
-    public String getDosen() {
+    public Dosen getDosen() {
         return dosen;
     }
 
-    public void setDosen(String dosen) {
+    public void setDosen(Dosen dosen) {
         this.dosen = dosen;
     }
 
-    public int getSks() {
-        return sks;
-    }
-
-    public void setSks(int sks) {
-        this.sks = sks;
-    }
 
     // Untuk Display
 

@@ -1,8 +1,8 @@
 class Mahasiswa extends Person {
     private String NIM;
     private String Jurusan;
-    public Mahasiswa(String name, int age, String nim,String jurusan) {
-        super(name, age);
+    public Mahasiswa(String name, int alamat, String nim,String jurusan) {
+        super(name, alamat);
         this.NIM = nim;
         this.Jurusan = jurusan;
     }

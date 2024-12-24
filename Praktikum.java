@@ -1,32 +1,22 @@
-abstract class Praktikum extends Matakuliah{
-    private String namaPrak;
+abstract class Praktikum extends Matakuliah {
     private int slot;
 
-    public Praktikum(String namaPrak, int slot){
-        this.namaPrak = namaPrak;
+    public Praktikum(String kodeMatkul, String namaMatkul, int slot) {
+        super(kodeMatkul, namaMatkul);
         this.slot = slot;
     }
 
-    // Getter dan Setter
-
-    public String getNamaPrak() {
-        return namaPrak;
-    }
-
-    public void setNamaPrak(String namaPrak) {
-        this.namaPrak = namaPrak;
-    }
-
+    // Getter for slot
     public int getSlot() {
         return slot;
     }
 
+    // Setter for slot
     public void setSlot(int slot) {
         this.slot = slot;
     }
 
-    // Untuk Display
-
-    public void display(){};
-
+    // Implementing the display method
+    public void display() {
+    }
 }

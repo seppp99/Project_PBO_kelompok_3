@@ -1,8 +1,8 @@
 class Dosen extends Person{
     private int NIDN;
     private String Matakuliah;
-    public Dosen(String name, int age, int nidn, String Matakuliah) {
-        super(name, age);
+    public Dosen(String name, int alamat, int nidn, String Matakuliah) {
+        super(name, alamat);
         this.NIDN = nidn;
         this.Matakuliah = Matakuliah;
     }

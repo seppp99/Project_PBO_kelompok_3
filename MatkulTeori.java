@@ -1,22 +1,21 @@
-abstract class MatkulTeori extends Matakuliah{
-    private String namaMatkul;
-    //TOLONG INI DITAMBAHIN SUPER() SUPAYA RELASI 
-    
-    public Praktikum(String namaMatkul){
-        this.namaMatkul = namaMatkul;
-        super(); // kayak yang ini
+abstract  class MatkulTeori extends Matakuliah{
+    private int sks; 
+    public MatkulTeori(String kodeMatkul, String namaMatkul, int sks) {
+        super(namaMatkul, kodeMatkul);
+        this.sks = sks;
     }
 
     // Getter dan Setter
 
-    public String getNamaMatkul() {
-        return namaMatkul;
+
+    public int getSks() {
+        return this.sks;
     }
 
-    public void setNamaMatkul(String namaMatkul) {
-        this.namaMatkul = namaMatkul;
+    public void setSks(int sks) {
+        this.sks = sks;
     }
-
+    
     // Untuk Display
 
     public void display(){};

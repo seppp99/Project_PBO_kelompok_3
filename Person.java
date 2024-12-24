@@ -1,10 +1,10 @@
 public abstract class Person {
     private String name;
-    private int age;
+    private int alamat;
 
-    public Person(String name, int age) {
+    public Person(String name, int alamat) {
         this.name = name;
-        this.age = age;
+        this.alamat = alamat;
     } 
 
     public Person() {
@@ -19,10 +19,10 @@ public abstract class Person {
     }
 
     public int getAge() {
-        return age;
+        return alamat;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(int alamat) {
+        this.alamat = alamat;
     }
 }

@@ -1,8 +1,10 @@
 abstract class MatkulTeori extends Matakuliah{
     private String namaMatkul;
-
+    //TOLONG INI DITAMBAHIN SUPER() SUPAYA RELASI 
+    
     public Praktikum(String namaMatkul){
         this.namaMatkul = namaMatkul;
+        super(); // kayak yang ini
     }
 
     // Getter dan Setter

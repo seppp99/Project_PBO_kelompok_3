@@ -1,4 +1,4 @@
-abstract class Praktikum{
+abstract class Praktikum extends Matakuliah{
     private String namaPrak;
     private int slot;
 

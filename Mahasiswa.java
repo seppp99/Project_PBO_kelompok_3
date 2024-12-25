@@ -1,28 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Mahasiswa extends Person {
-    private String NIM;
-    private String Jurusan;
-    public Mahasiswa(String name, int alamat, String nim,String jurusan) {
-        super(name, alamat);
-        this.NIM = nim;
-        this.Jurusan = jurusan;
+    private String nim;
+    private  ProgramStudi programStudi;
+    private List<Matakuliah> daftarMataKuliah;
+    private TranskripTotalMahasiswa transkrip;
+
+    public Mahasiswa(String nama, String alamat, String nim, ProgramStudi programStudi) {
+        super(nama, alamat);
+        this.nim = nim;
+        this.programStudi = programStudi;
+        this.daftarMataKuliah = new ArrayList<>();
+        this.transkrip = new TranskripTotalMahasiswa(this);
     }
 
-    public String getNIM() {
-        return this.NIM;
+    public String getNim() {
+        return nim;
     }
 
-    public void setNIM(String NIM) {
-        this.NIM = NIM;
+    public ProgramStudi getProgramStudi() {
+        return programStudi;
     }
 
-
-    public String getJurusan() {
-        return this.Jurusan;
+    public List<Matakuliah> getDaftarMataKuliah() {
+        return daftarMataKuliah;
     }
 
-    public void setJurusan(String Jurusan) {
-        this.Jurusan = Jurusan;
+    public TranskripTotalMahasiswa getTranskrip() {
+        return transkrip;
     }
 
+    
     
 }

@@ -1,8 +1,8 @@
 public abstract class Person {
     private String name;
-    private int alamat;
+    private String alamat;
 
-    public Person(String name, int alamat) {
+    public Person(String name, String alamat) {
         this.name = name;
         this.alamat = alamat;
     } 
@@ -18,11 +18,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAlamat() {
         return alamat;
     }
 
-    public void setAge(int alamat) {
+    public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
 }

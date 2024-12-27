@@ -1,26 +1,43 @@
-class Dosen extends Person{
-    private int NIDN;
-    private String Matakuliah;
-    public Dosen(String name, String alamat, int nidn, String Matakuliah) {
-        super(name, alamat);
-        this.NIDN = nidn;
-        this.Matakuliah = Matakuliah;
+import java.util.ArrayList;
+
+public class Dosen extends Person {
+    public String matakuliah;
+    public String hari;
+    public String waktu;
+    public int slotMax;
+    public int slotTerisi;
+
+    public Dosen(String nama, String matakuliah, String hari, String waktu, int slotMax) {
+        super(nama);
+        this.matakuliah = matakuliah;
+        this.hari = hari;
+        this.waktu = waktu;
+        this.slotMax = slotMax;
+        this.slotTerisi = 0;
     }
 
-    public int getNIDN() {
-        return this.NIDN;
+    public boolean isSlotAvailable() {
+        return slotTerisi < slotMax;
     }
 
-    public void setNIDN(int NIDN) {
-        this.NIDN = NIDN;
+    public void tambahSlot() {
+        if (isSlotAvailable()) {
+            slotTerisi++;
+        }
     }
 
-    public String getMatakuliah() {
-        return this.Matakuliah;
+    public void kurangiSlot() {
+        if (slotTerisi > 0) {
+            slotTerisi--;
+        }
     }
 
-    public void setMatakuliah(String Matakuliah) {
-        this.Matakuliah = Matakuliah;
+    public void displayInfo() {
+        System.out.println("Dosen: " + nama + ", Matakuliah: " + matakuliah + ", Hari: " + hari + ", Waktu: " + waktu + ", Slot: " + slotTerisi + "/" + slotMax);
     }
-    
+
+    public static void tampilkanInfoDosen(ArrayList<Dosen> dosenList) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'tampilkanInfoDosen'");
+    }
 }

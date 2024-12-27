@@ -1,28 +1,17 @@
 public abstract class Person {
-    private String name;
-    private String alamat;
+    protected String nama;
 
-    public Person(String name, String alamat) {
-        this.name = name;
-        this.alamat = alamat;
-    } 
-
-    public Person() {
+    public Person(String nama) {
+        this.nama = nama;
     }
 
-    public String getName() {
-        return name;
+    public String getNama() {
+        return nama;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
-    public String getAlamat() {
-        return alamat;
-    }
-
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
-    }
+    public abstract void displayInfo();
 }

@@ -20,6 +20,7 @@ class  TranskripTotalMahasiswa implements PerhitunganNilaiTotal {
         nilaiPraktikum.add(nilai);
     }
 
+    @Override
     public double hitungTotalNilai(List<Double> nilaiMatkulTeori, List<Double> nilaiMatkulPraktikum) {
         double totalTeori = 0;
         for (double nilai : nilaiMatkulTeori) {

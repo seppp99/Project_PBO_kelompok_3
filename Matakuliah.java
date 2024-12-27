@@ -1,24 +1,17 @@
-
-import java.util.ArrayList;
-import java.util.List;
-
-abstract class Matakuliah{
+public class Matakuliah {
+    
     protected String kode;
     protected String nama;
-    protected int jumlahSKS;
-    protected Dosen dosenPengampu;
-    protected JadwalKuliah jadwal;
-    protected int kuota;
-    protected List<Mahasiswa> mahasiswaTerdaftar;
+    protected String hari;
+    protected String waktu;
+    protected String dosen;
 
-    public Matakuliah(String kode, String nama, int jumlahSKS, Dosen dosenPengampu, JadwalKuliah jadwal, int kuota) {
+    public Matakuliah(String kode, String nama, String hari, String waktu, String dosen) {
         this.kode = kode;
         this.nama = nama;
-        this.jumlahSKS = jumlahSKS;
-        this.dosenPengampu = dosenPengampu;
-        this.jadwal = jadwal;
-        this.kuota = kuota;
-        this.mahasiswaTerdaftar = new ArrayList<>();
+        this.hari = hari;
+        this.waktu = waktu;
+        this.dosen = dosen;
     }
 
     public String getKode() {
@@ -29,9 +22,15 @@ abstract class Matakuliah{
         return nama;
     }
 
-    public JadwalKuliah getJadwal() {
-        return jadwal;
+    public String getHari() {
+        return hari;
     }
-    public abstract void berikanNilai(Mahasiswa mahasiswa, double... nilai);
 
+    public String getWaktu() {
+        return waktu;
+    }
+
+    public String getDosen() {
+        return dosen;
+    }
 }

@@ -79,63 +79,49 @@ public class Mahasiswa extends Person {
     }
 
     public static void hitungDanSimpanTranskrip(Scanner scanner, ArrayList<Mahasiswa> mahasiswaList) {
-        System.out.println("Pilih mahasiswa untuk memasukkan nilai:");
-        for (int i = 0; i < mahasiswaList.size(); i++) {
-            System.out.println((i + 1) + ". " + mahasiswaList.get(i).getNama() + " (NIM: " + mahasiswaList.get(i).nim + ")");
-        }
-
-        int pilihMahasiswaNilai = scanner.nextInt() - 1;
-        scanner.nextLine();
-        Mahasiswa mahasiswaDipilih = mahasiswaList.get(pilihMahasiswaNilai);
-        Jadwal jadwal = mahasiswaDipilih.getJadwal();
-
-        double totalTeori = 0, totalPraktikum = 0;
-        int jumlahTeori = 0, jumlahPraktikum = 0;
-
-        for (int i = 0; i < jadwal.getJumlahJadwal(); i++) {
-            String matkul = jadwal.getMatakuliah(i);
-
-            if (matkul.contains("Teori")) {
-                System.out.print("Masukkan nilai UTS untuk " + matkul + ": ");
-                double uts = scanner.nextDouble();
-                System.out.print("Masukkan nilai UAS untuk " + matkul + ": ");
-                double uas = scanner.nextDouble();
-                System.out.print("Masukkan nilai Tugas untuk " + matkul + ": ");
-                double tugas = scanner.nextDouble();
-                scanner.nextLine();
-
-                double nilaiTeori = (uts * 0.3) + (uas * 0.4) + (tugas * 0.3);
-                totalTeori += nilaiTeori;
-                jumlahTeori++;
-            } else if (matkul.contains("Praktikum")) {
-                System.out.print("Masukkan nilai Laporan untuk " + matkul + ": ");
-                double laporan = scanner.nextDouble();
-                System.out.print("Masukkan nilai Responsi untuk " + matkul + ": ");
-                double responsi = scanner.nextDouble();
-                System.out.print("Masukkan nilai Kehadiran untuk " + matkul + ": ");
-                double kehadiran = scanner.nextDouble();
-                scanner.nextLine();
-
-                double nilaiPraktikum = (laporan * 0.4) + (responsi * 0.4) + (kehadiran * 0.2);
-                totalPraktikum += nilaiPraktikum;
-                jumlahPraktikum++;
+        TranskripTotal transkripTotal = new TranskripTotal();
+    
+        try (PrintWriter writer = new PrintWriter(new FileWriter("TranskipMahasiswa.txt"))) {
+            for (Mahasiswa mahasiswa : mahasiswaList) {
+                Jadwal jadwal = mahasiswa.getJadwal();
+    
+                double totalTeori = 0, totalPraktikum = 0;
+                int jumlahTeori = 0, jumlahPraktikum = 0;
+    
+                for (int i = 0; i < jadwal.getJumlahJadwal(); i++) {
+                    String matkul = jadwal.getMatakuliah(i);
+    
+                    if (matkul.contains("Teori")) {
+                        TranskripMatakuliahTeori teori = new TranskripMatakuliahTeori();
+                        teori.inputNilai(scanner, matkul);
+                        totalTeori += teori.hitungRataRata();
+                        jumlahTeori++;
+                    } else if (matkul.contains("Praktikum")) {
+                        TranskripPraktikum praktikum = new TranskripPraktikum();
+                        praktikum.inputNilai(scanner, matkul);
+                        totalPraktikum += praktikum.hitungRataRata();
+                        jumlahPraktikum++;
+                    }
+                }
+    
+                double rataRataTeori = (jumlahTeori > 0) ? totalTeori / jumlahTeori : 0;
+                double rataRataPraktikum = (jumlahPraktikum > 0) ? totalPraktikum / jumlahPraktikum : 0;
+    
+                double nilaiKomulatif = transkripTotal.hitungNilaiKomulatif(rataRataTeori, rataRataPraktikum, jumlahTeori, jumlahPraktikum);
+    
+                // Tampilkan ke terminal
+                System.out.println("\nMahasiswa: " + mahasiswa.getNama() + " (NIM: " + mahasiswa.nim + ")");
+                System.out.println("Rata-Rata Teori: " + rataRataTeori);
+                System.out.println("Rata-Rata Praktikum: " + rataRataPraktikum);
+                System.out.println("Nilai Komulatif: " + nilaiKomulatif);
+    
+                // Simpan ke file
+                writer.println("Mahasiswa: " + mahasiswa.getNama() + " (NIM: " + mahasiswa.nim + ")");
+                writer.println("Rata-Rata Teori: " + rataRataTeori);
+                writer.println("Rata-Rata Praktikum: " + rataRataPraktikum);
+                writer.println("Nilai Komulatif: " + nilaiKomulatif);
             }
-        }
-
-        double rataRataTeori = jumlahTeori > 0 ? totalTeori / jumlahTeori : 0;
-        double rataRataPraktikum = jumlahPraktikum > 0 ? totalPraktikum / jumlahPraktikum : 0;
-        double nilaiKomulatif = jumlahTeori > 0 && jumlahPraktikum == 0 ? rataRataTeori : (rataRataTeori * 0.75) + (rataRataPraktikum * 0.25);
-
-        System.out.println("Mahasiswa: " + mahasiswaDipilih.getNama() + " (NIM: " + mahasiswaDipilih.nim + ")");
-        System.out.println("Rata-Rata Teori: " + rataRataTeori);
-        System.out.println("Rata-Rata Praktikum: " + rataRataPraktikum);
-        System.out.println("Nilai Komulatif: " + nilaiKomulatif);
-
-        try (PrintWriter writer = new PrintWriter(new FileWriter("TranskipMahasiswa.txt", true))) {
-            writer.println("Mahasiswa: " + mahasiswaDipilih.getNama() + " (NIM: " + mahasiswaDipilih.nim + ")");
-            writer.println("Rata-Rata Teori: " + rataRataTeori);
-            writer.println("Rata-Rata Praktikum: " + rataRataPraktikum);
-            writer.println("Nilai Komulatif: " + nilaiKomulatif);
+            System.out.println("\nHasil transkrip mahasiswa berhasil disimpan ke file TranskipMahasiswa.txt.");
         } catch (IOException e) {
             System.out.println("Gagal menyimpan transkrip mahasiswa ke file.");
         }

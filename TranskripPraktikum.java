@@ -1,16 +1,21 @@
+import java.util.Scanner;
+
 public class TranskripPraktikum {
-    private MatakuliahPraktikum matakuliahPraktikum;
+    private double laporan;
+    private double responsi;
+    private double kehadiran;
 
-    public TranskripPraktikum(MatakuliahPraktikum matakuliahPraktikum) {
-        this.matakuliahPraktikum = matakuliahPraktikum;
+    public void inputNilai(Scanner scanner, String matakuliah) {
+        System.out.print("Masukkan nilai Laporan untuk " + matakuliah + ": ");
+        this.laporan = scanner.nextDouble();
+        System.out.print("Masukkan nilai Responsi untuk " + matakuliah + ": ");
+        this.responsi = scanner.nextDouble();
+        System.out.print("Masukkan nilai Kehadiran untuk " + matakuliah + ": ");
+        this.kehadiran = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
     }
 
-    public double hitungNilaiAkhir() {
-        return matakuliahPraktikum.hitungNilai();
-    }
-
-    @Override
-    public String toString() {
-        return matakuliahPraktikum.getNama() + " - Nilai Akhir: " + hitungNilaiAkhir();
+    public double hitungRataRata() {
+        return (laporan * 0.4) + (responsi * 0.4) + (kehadiran * 0.2);
     }
 }

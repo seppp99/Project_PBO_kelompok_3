@@ -40,7 +40,7 @@ public class main {
                     break;
 
                 case 3:
-                    Dosen.tampilkanInfoDosen(dosenList);
+                    Dosen.tampilkanInfoDosen("Dosen.txt");
                     break;
 
                 case 4:

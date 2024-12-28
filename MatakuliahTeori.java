@@ -10,10 +10,7 @@ public class MatakuliahTeori extends Matakuliah {
         this.tugas = tugas;
     }
 
-    public double hitungNilai() {
-        return (uts * 0.3) + (uas * 0.4) + (tugas * 0.3);
-    }
-
+   
     public void setNilai(double uts, double uas, double tugas) {
         this.uts = uts;
         this.uas = uas;

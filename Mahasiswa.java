@@ -126,7 +126,6 @@ public class Mahasiswa extends Person {
             System.out.println("Gagal menyimpan transkrip mahasiswa ke file.");
         }
     }
-
     public static void tampilkanIsiFile(String fileName) {
         System.out.println("\n=== Membaca Isi File ===");
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -138,6 +137,9 @@ public class Mahasiswa extends Person {
             System.out.println("Gagal membaca file: " + e.getMessage());
         }
     }
+
+
+
 
     public static void kurangiMatakuliah(Scanner scanner, ArrayList<Mahasiswa> mahasiswaList) {
         System.out.println("Pilih mahasiswa untuk menghapus matakuliah:");

@@ -1,3 +1,19 @@
 Dr. Budi,Algoritma Teori,Senin,08:00-10:00,30
 Prof. Siti,Basis Data Teori,Selasa,10:00-12:00,25
-Dr. Ahmad,Praktikum Pemrograman,Senin,10:00-12:00,20
+Dr. Ahmad,Praktikum Pemrograman,Senin,08:00-11:00,20
+Prof. Rina,Struktur Data Teori,Rabu,08:00-10:00,28
+Dr. Ani,Matematika Diskrit Teori,Kamis,14:00-16:00,22
+Prof. Joko,Rekayasa Perangkat Lunak Teori,Jumat,09:00-11:00,27
+Dr. Sari,Jaringan Komputer Teori,Senin,11:00-13:00,24
+Prof. Lilis,Algoritma Praktikum,Selasa,08:00-10:00,18
+Dr. Tono,Praktikum Basis Data,Rabu,10:00-12:00,20
+Prof. Siti,Keamanan Sistem Teori,Kamis,10:00-12:00,25
+Dr. Budi,Praktikum Pemrograman,Jumat,10:00-12:00,22
+Prof. Rina,Matematika Diskrit Praktikum,Senin,14:00-16:00,19
+Dr. Ani,Praktikum Rekayasa Perangkat Lunak,Selasa,13:00-15:00,20
+Prof. Tono,Struktur Data Praktikum,Rabu,08:00-10:00,18
+Dr. Sari,Jaringan Komputer Praktikum,Kamis,11:00-13:00,20
+Dr. Joko,Keamanan Sistem Praktikum,Senin,08:00-10:00,21
+Prof. Rina,Rekayasa Perangkat Lunak Praktikum,Selasa,09:00-11:00,23
+Dr. Lilis,Matematika Diskrit Praktikum,Jumat,08:00-10:00,15
+Prof. Tono,Algoritma Praktikum,Kamis,08:00-10:00,22

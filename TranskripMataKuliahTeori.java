@@ -12,7 +12,7 @@ public class TranskripMatakuliahTeori {
         this.uas = scanner.nextDouble();
         System.out.print("Masukkan nilai Tugas untuk " + matakuliah + ": ");
         this.tugas = scanner.nextDouble();
-        scanner.nextLine(); 
+        scanner.nextLine();
     }
 
     public double hitungRataRata() {

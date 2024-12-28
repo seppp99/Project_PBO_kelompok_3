@@ -10,9 +10,7 @@ public class MatakuliahPraktikum extends Matakuliah {
         this.kehadiran = kehadiran;
     }
 
-    public double hitungNilai() {
-        return (laporan * 0.4) + (responsi * 0.4) + (kehadiran * 0.2);
-    }
+   
 
     public void setNilai(double laporan, double responsi, double kehadiran) {
         this.laporan = laporan;

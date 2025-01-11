@@ -6,12 +6,14 @@ public class Jadwal implements PengelolaanJadwal {
     private ArrayList<String> hariList;
     private ArrayList<String> waktuList;
     private ArrayList<String> dosenList;
+    private Mahasiswa mahasiswa;
 
-    public Jadwal() {
+    public Jadwal(Mahasiswa mahasiswa) {
         this.matakuliahList = new ArrayList<>();
         this.hariList = new ArrayList<>();
         this.waktuList = new ArrayList<>();
         this.dosenList = new ArrayList<>();
+        this.mahasiswa = mahasiswa;
     }
 
     private boolean isTimeOverlap(String time1, String time2) {

@@ -3,14 +3,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mahasiswa extends Person {
-    public String nim;
-    private Jadwal jadwal;
-
-    public Mahasiswa(String nama, String nim) {
-        super(nama);
-        this.nim = nim;
-        this.jadwal = new Jadwal();
+    private static final Mahasiswa Mahasiswa = null;
+        public String nim;
+        private final Jadwal jadwal;
+    
+        public Mahasiswa(String nama, String nim) {
+            super(nama);
+            this.nim = nim;
+            this.jadwal = new Jadwal(Mahasiswa);
     }
+    
 
     public String getNama() {
         return nama;
@@ -170,8 +172,5 @@ public class Mahasiswa extends Person {
         jadwal.hapusJadwal(pilihMatkulHapus);
     }
 
-    @Override
-    public void displayInfo() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    
 }

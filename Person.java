@@ -13,5 +13,5 @@ public abstract class Person {
         this.nama = nama;
     }
 
-    public abstract void displayInfo();
+    
 }

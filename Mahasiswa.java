@@ -94,12 +94,12 @@ public class Mahasiswa extends Person {
                     String matkul = jadwal.getMatakuliah(i);
     
                     if (matkul.contains("Teori")) {
-                        TranskripMatakuliahTeori teori = new TranskripMatakuliahTeori();
+                        MatakuliahTeori teori = new MatakuliahTeori();
                         teori.inputNilai(scanner, matkul);
                         totalTeori += teori.hitungRataRata();
                         jumlahTeori++;
                     } else if (matkul.contains("Praktikum")) {
-                        TranskripPraktikum praktikum = new TranskripPraktikum();
+                        MatakuliahPraktikum praktikum = new MatakuliahPraktikum();
                         praktikum.inputNilai(scanner, matkul);
                         totalPraktikum += praktikum.hitungRataRata();
                         jumlahPraktikum++;

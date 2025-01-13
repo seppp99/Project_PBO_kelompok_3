@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class MatakuliahPraktikum extends Matakuliah {
+
     private double laporan;
     private double responsi;
     private double kehadiran;
@@ -10,16 +13,24 @@ public class MatakuliahPraktikum extends Matakuliah {
         this.kehadiran = kehadiran;
     }
 
-   
-
-    public void setNilai(double laporan, double responsi, double kehadiran) {
-        this.laporan = laporan;
-        this.responsi = responsi;
-        this.kehadiran = kehadiran;
+    public MatakuliahPraktikum(){
+        super("","","","","");
+        this.laporan = 0;
+        this.responsi = 0;
+        this.kehadiran = 0;
     }
 
-    @Override
-    public String toString() {
-        return super.getNama() + " (Laporan: " + laporan + ", Responsi: " + responsi + ", Kehadiran: " + kehadiran + ")";
+    public void inputNilai(Scanner scanner, String matakuliah) {
+        System.out.print("Masukkan nilai Laporan untuk " + matakuliah + ": ");
+        this.laporan = scanner.nextDouble();
+        System.out.print("Masukkan nilai Responsi untuk " + matakuliah + ": ");
+        this.responsi = scanner.nextDouble();
+        System.out.print("Masukkan nilai Kehadiran untuk " + matakuliah + ": ");
+        this.kehadiran = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+    }
+
+    public double hitungRataRata() {
+        return (laporan * 0.4) + (responsi * 0.4) + (kehadiran * 0.2);
     }
 }
